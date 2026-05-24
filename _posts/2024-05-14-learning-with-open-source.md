@@ -3,7 +3,7 @@ layout: post
 title: "Learning with Open Source"
 date: 2024-05-14
 tags: [opensource, learning, meta]
-categories: [reflection]
+categories: [reflection, opensource]
 ---
 
 # Learning with Open Source

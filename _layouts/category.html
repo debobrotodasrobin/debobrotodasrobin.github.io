@@ -1,0 +1,26 @@
+{% comment %} Category archive layout for each category {% endcomment %}
+---
+layout: default
+title: Category - {{ page.category }}
+---
+
+<section class="section">
+  <h1 class="title">Posts in Category: <span class="has-text-warning">{{ page.category }}</span></h1>
+  <div class="content">
+    <ul>
+    {% assign catname = page.category %}
+    {% for post in site.posts %}
+      {% if post.categories contains catname %}
+        <li>
+          <a href="{{ post.url }}"><strong>{{ post.title }}</strong></a>
+          <span class="has-text-grey">({{ post.date | date: '%b %d, %Y' }})</span>
+        </li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </div>
+  <div class="mt-3">
+    <a class="button is-small" href="/categories.html">All Categories</a>
+    <a class="button is-small is-link" href="/blog/">All Posts</a>
+  </div>
+</section>

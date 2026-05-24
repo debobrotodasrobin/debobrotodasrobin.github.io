@@ -2,7 +2,7 @@
 layout: post
 title: "My First Blog Post"
 date: 2024-05-25
-categories: [general]
+categories: [general, tutorial]
 tags: [welcome, introduction]
 ---
 

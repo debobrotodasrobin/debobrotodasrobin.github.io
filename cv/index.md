@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: Curriculum Vitae
@@ -6,23 +5,19 @@ title: Curriculum Vitae
 
 # Curriculum Vitae
 
+Quick snapshot of my experience, education, and skills.
+
 ## Experience
-- <strong>Position</strong>: [Your Position]  
-  <strong>Company</strong>: [Your Company]  
-  <strong>Duration</strong>: [Start] – [End]
+- Position: Software Engineer, Open Source Project (2021—Present)
+- Position: Student, University of Example (2018—2022)
 
 ## Education
-- <strong>Degree</strong>: [Degree Name]  
-  <strong>Institution</strong>: [University Name]  
-  <strong>Year</strong>: [Graduation Year]
+- B.Sc. Computer Science, University of Example, 2022
 
 ## Skills
-<div class="tags">
-  <span class="tag is-info">Skill 1</span> <span class="tag is-link">Skill 2</span> <span class="tag">Skill 3</span>
+<div class="tags mt-2">
+  <span class="tag is-info">Python</span>
+  <span class="tag is-link">C++</span>
+  <span class="tag is-success">Git</span>
+  <span class="tag is-warning">Web Development</span>
 </div>
-
-## Selected Projects
-<ul>
-  <li><strong>Project 1:</strong> <a href="/projects/project_1">See details</a></li>
-</ul>
-

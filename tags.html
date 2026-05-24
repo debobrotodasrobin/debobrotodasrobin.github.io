@@ -1,0 +1,14 @@
+---
+layout: default
+title: Tags
+---
+
+<section class="section">
+  <h1 class="title">Blog Tags</h1>
+  <div class="tags is-medium">
+  {% assign all_tags = site.tags | sort %}
+  {% for tag in all_tags %}
+    <a class="tag is-link" href="/tags/{{ tag[0] | slugify }}/">{{ tag[0] }} ({{ tag[1].size }})</a>
+  {% endfor %}
+  </div>
+</section>

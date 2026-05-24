@@ -1,0 +1,33 @@
+---
+layout: default
+title: Posts by Category
+---
+
+<section class="section">
+  <h1 class="title">Posts by Category</h1>
+  <p class="subtitle">Click a category below to jump to that section.</p>
+
+  <div class="tags are-medium">
+  {% assign all_cats = site.categories | sort %}
+  {% for cat in all_cats %}
+    <a class="tag is-warning" href="#{{ cat[0] | slugify }}">{{ cat[0] }} ({{ cat[1].size }})</a>
+  {% endfor %}
+  </div>
+
+  <hr>
+
+  {% assign all_cats = site.categories | sort %}
+  {% for cat in all_cats %}
+    <h2 class="title is-4" id="{{ cat[0] | slugify }}">{{ cat[0] }}</h2>
+    <ul>
+    {% for post in cat[1] %}
+      <li>
+        <a href="{{ post.url }}"><strong>{{ post.title }}</strong></a>
+        <span class="has-text-grey">({{ post.date | date: "%b %d, %Y" }})</span>
+      </li>
+    {% endfor %}
+    </ul>
+    <a class="button is-small is-light" href="#">Back to top</a>
+    <hr>
+  {% endfor %}
+</section>

@@ -9,13 +9,13 @@ layout: default
       {% if page.tags.size > 0 %}
         &middot;
         {% for tag in page.tags %}
-          <a class="tag is-info" href="/tags/{{ tag | slugify }}/">{{ tag }}</a>
+          <a class="tag is-info" href="/tag/#{{ tag | slugify }}">{{ tag }}</a>
         {% endfor %}
       {% endif %}
       {% if page.categories.size > 0 %}
         &middot;
         {% for cat in page.categories %}
-          <a class="tag is-warning" href="/categories/{{ cat | slugify }}/">{{ cat }}</a>
+          <a class="tag is-warning" href="/category/#{{ cat | slugify }}">{{ cat }}</a>
         {% endfor %}
       {% endif %}
     </p>

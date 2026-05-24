@@ -1,0 +1,33 @@
+---
+layout: default
+title: Posts by Tag
+---
+
+<section class="section">
+  <h1 class="title">Posts by Tag</h1>
+  <p class="subtitle">Click a tag below to jump to that section.</p>
+
+  <div class="tags are-medium">
+  {% assign all_tags = site.tags | sort %}
+  {% for tag in all_tags %}
+    <a class="tag is-info" href="#{{ tag[0] | slugify }}">{{ tag[0] }} ({{ tag[1].size }})</a>
+  {% endfor %}
+  </div>
+
+  <hr>
+
+  {% assign all_tags = site.tags | sort %}
+  {% for tag in all_tags %}
+    <h2 class="title is-4" id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+    <ul>
+    {% for post in tag[1] %}
+      <li>
+        <a href="{{ post.url }}"><strong>{{ post.title }}</strong></a>
+        <span class="has-text-grey">({{ post.date | date: "%b %d, %Y" }})</span>
+      </li>
+    {% endfor %}
+    </ul>
+    <a class="button is-small is-light" href="#">Back to top</a>
+    <hr>
+  {% endfor %}
+</section>

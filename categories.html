@@ -5,10 +5,11 @@ title: Categories
 
 <section class="section">
   <h1 class="title">Categories</h1>
-  <div class="tags is-medium">
-  {% assign cats = site.categories | sort %}
-  {% for cat in cats %}
-    <a class="tag is-warning" href="/categories/{{ cat[0] | slugify }}/">{{ cat[0] }} ({{ cat[1].size }})</a>
+  <p class="subtitle">Click a category to view all posts in that category.</p>
+  <div class="tags are-medium">
+  {% assign all_cats = site.categories | sort %}
+  {% for cat in all_cats %}
+    <a class="tag is-warning" href="/category/#{{ cat[0] | slugify }}">{{ cat[0] }} ({{ cat[1].size }})</a>
   {% endfor %}
   </div>
 </section>

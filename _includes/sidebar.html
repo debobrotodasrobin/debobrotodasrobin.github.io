@@ -1,9 +1,10 @@
 
-<div id="sidebar">
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/cv">CV</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/blog">Blog</a></li>
-    </ul>
-</div>
+<nav class="menu">
+  <p class="menu-label">Navigation</p>
+  <ul class="menu-list">
+    <li><a href="/"{% if page.url == '/' %} class="is-active"{% endif %}>Home</a></li>
+    <li><a href="/cv"{% if page.url contains '/cv' %} class="is-active"{% endif %}>CV</a></li>
+    <li><a href="/projects"{% if page.url contains '/projects' %} class="is-active"{% endif %}>Projects</a></li>
+    <li><a href="/blog"{% if page.url contains '/blog' %} class="is-active"{% endif %}>Blog</a></li>
+  </ul>
+</nav>

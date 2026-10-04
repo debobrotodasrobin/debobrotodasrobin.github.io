@@ -3,14 +3,17 @@ layout: default
 title: Tags
 ---
 
-<header style="margin-bottom:2rem;">
-  <h1 class="page-title">Tags</h1>
-  <p class="page-lede">Click a tag to view all posts that carry it.</p>
+<header>
+  <h2 class="h2 article-title">Tags</h2>
 </header>
 
-<div class="pill-row">
+<section class="about-text">
+  <p>Click a tag to view all posts that carry it.</p>
+</section>
+
+<div class="tag-cloud">
 {% assign all_tags = site.tags | sort %}
 {% for tag in all_tags %}
-  <a class="pill pill-accent" href="/tag/#{{ tag[0] | slugify }}">{{ tag[0] }} &middot; {{ tag[1].size }}</a>
+  <a class="tag-pill tag-lg" href="/tag/#{{ tag[0] | slugify }}">{{ tag[0] }} &middot; {{ tag[1].size }}</a>
 {% endfor %}
 </div>

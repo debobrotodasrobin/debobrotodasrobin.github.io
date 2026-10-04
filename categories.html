@@ -3,14 +3,17 @@ layout: default
 title: Categories
 ---
 
-<header style="margin-bottom:2rem;">
-  <h1 class="page-title">Categories</h1>
-  <p class="page-lede">Click a category to view all posts filed under it.</p>
+<header>
+  <h2 class="h2 article-title">Categories</h2>
 </header>
 
-<div class="pill-row">
+<section class="about-text">
+  <p>Click a category to view all posts filed under it.</p>
+</section>
+
+<div class="tag-cloud">
 {% assign all_cats = site.categories | sort %}
 {% for cat in all_cats %}
-  <a class="pill pill-accent" href="/category/#{{ cat[0] | slugify }}">{{ cat[0] }} &middot; {{ cat[1].size }}</a>
+  <a class="tag-pill tag-lg" href="/category/#{{ cat[0] | slugify }}">{{ cat[0] }} &middot; {{ cat[1].size }}</a>
 {% endfor %}
 </div>

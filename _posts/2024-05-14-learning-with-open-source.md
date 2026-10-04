@@ -6,7 +6,6 @@ tags: [opensource, learning, meta]
 categories: [reflection, opensource]
 ---
 
-# Learning with Open Source
 
 Contributing to open source is one of the fastest and most rewarding ways to learn new technologies. Here are some insights:
 

@@ -1,67 +1,227 @@
 ---
-layout: default
+layout: vcard
 title: Home
 ---
 
-<section class="hero">
-  <span class="hero-kicker">Open to interesting problems</span>
-  <h1>Hi, I'm Debobroto Das Robin.</h1>
-  <p class="hero-sub">Developer, lifelong learner, and open source enthusiast. I build things, break them, write about what I learn, and share it all here.</p>
-  <div class="hero-ctas">
-    <a class="btn btn-primary" href="/cv/">View my CV</a>
-    <a class="btn btn-ghost" href="/blog/">Read my blog</a>
-  </div>
-</section>
+<nav class="navbar">
+  <ul class="navbar-list">
+    <li class="navbar-item"><button class="navbar-link active" data-nav-link>About</button></li>
+    <li class="navbar-item"><button class="navbar-link" data-nav-link>Resume</button></li>
+    <li class="navbar-item"><button class="navbar-link" data-nav-link>Projects</button></li>
+    <li class="navbar-item"><button class="navbar-link" data-nav-link>Blog</button></li>
+    <li class="navbar-item"><button class="navbar-link" data-nav-link>Contact</button></li>
+  </ul>
+</nav>
 
-<section class="section">
-  <div class="section-head">
-    <h2 class="section-title">About me</h2>
-  </div>
-  <p class="page-lede" style="margin-bottom:0;">I'm a passionate developer who loves building things, contributing to open source, and sharing knowledge. This site is my personal corner of the web where you can find my resume, explore my projects, and read my thoughts.</p>
-</section>
+<article class="about active" data-page="about">
+  <header>
+    <h2 class="h2 article-title">About me</h2>
+  </header>
 
-<section class="section">
-  <div class="section-head">
-    <h2 class="section-title">Latest posts</h2>
-    <a class="section-link" href="/blog/">View all &rarr;</a>
-  </div>
-  <div class="card-grid">
-    {% assign recent = site.posts | sort: 'date' | reverse | slice: 0, 3 %}
-    {% for post in recent %}
-    <article class="card">
-      <p class="card-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-      <div class="pill-row">
-        {% for tag in post.tags %}
-          <a class="pill" href="/tag/#{{ tag | slugify }}">{{ tag }}</a>
-        {% endfor %}
+  <section class="about-text">
+    <p>
+      I'm a passionate developer who loves building things, contributing to open source,
+      and sharing knowledge. This site is my personal corner of the web where you can
+      find my resume, explore my projects, and read my thoughts.
+    </p>
+    <p>
+      I build things, break them, write about what I learn, and share it all here —
+      one commit at a time.
+    </p>
+  </section>
+
+  <section class="service">
+    <h3 class="h3 service-title">What I'm doing</h3>
+    <ul class="service-list">
+      <li class="service-item">
+        <div class="service-icon-box">
+          <img src="/assets/images/icon-dev.svg" alt="Development icon" width="40">
+        </div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">Software development</h4>
+          <p class="service-item-text">Building reliable software and open source tools.</p>
+        </div>
+      </li>
+      <li class="service-item">
+        <div class="service-icon-box">
+          <img src="/assets/images/icon-design.svg" alt="Learning icon" width="40">
+        </div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">Lifelong learning</h4>
+          <p class="service-item-text">Constantly picking up new technologies and putting them to work.</p>
+        </div>
+      </li>
+      <li class="service-item">
+        <div class="service-icon-box">
+          <img src="/assets/images/icon-photo.svg" alt="Writing icon" width="40">
+        </div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">Writing</h4>
+          <p class="service-item-text">Documenting what I learn through blog posts and project write-ups.</p>
+        </div>
+      </li>
+      <li class="service-item">
+        <div class="service-icon-box">
+          <img src="/assets/images/icon-app.svg" alt="Open source icon" width="40">
+        </div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">Open source</h4>
+          <p class="service-item-text">Contributing to and learning from the open source community.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+</article>
+
+<article class="resume" data-page="resume">
+  <header>
+    <h2 class="h2 article-title">Resume</h2>
+  </header>
+
+  <section class="timeline">
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg>
       </div>
-    </article>
-    {% endfor %}
-  </div>
-</section>
+      <h3 class="h3 title">Experience</h3>
+    </div>
+    <ol class="timeline-list">
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">Software Engineer, Open Source Project</h4>
+        <span>2021 — Present</span>
+        <p class="timeline-text">Working on open source projects, building and maintaining software used by the community.</p>
+      </li>
+    </ol>
+  </section>
 
-<section class="section">
-  <div class="section-head">
-    <h2 class="section-title">Featured projects</h2>
-    <a class="section-link" href="/projects/">All projects &rarr;</a>
-  </div>
-  <div class="card-grid">
-    <article class="card">
-      <h3>Project Alpha</h3>
-      <p>An exciting open source project I'm building.</p>
-      <a class="btn btn-ghost btn-sm" href="/projects/">Learn more</a>
-    </article>
-    <article class="card">
-      <h3>Project Beta</h3>
-      <p>A tool I created to solve a real-world problem.</p>
-      <a class="btn btn-ghost btn-sm" href="/projects/">Learn more</a>
-    </article>
-    <article class="card">
-      <h3>Project Gamma</h3>
-      <p>My latest experiment with new technologies.</p>
-      <a class="btn btn-ghost btn-sm" href="/projects/">Learn more</a>
-    </article>
-  </div>
-</section>
+  <section class="timeline">
+    <div class="title-wrapper">
+      <div class="icon-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+      </div>
+      <h3 class="h3 title">Education</h3>
+    </div>
+    <ol class="timeline-list">
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">B.Sc. Computer Science</h4>
+        <span>2018 — 2022</span>
+        <p class="timeline-text">University of Example.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="skill">
+    <h3 class="h3 skills-title">My skills</h3>
+    <ul class="skills-list content-card">
+      <li class="skills-item"><a href="/cv/" class="skill-pill">Python</a></li>
+      <li class="skills-item"><a href="/cv/" class="skill-pill">C++</a></li>
+      <li class="skills-item"><a href="/cv/" class="skill-pill">Git</a></li>
+      <li class="skills-item"><a href="/cv/" class="skill-pill">Web Development</a></li>
+    </ul>
+    <p class="resume-note">Full details on my <a href="/cv/">CV page</a>.</p>
+  </section>
+</article>
+
+<article class="projects" data-page="projects">
+  <header>
+    <h2 class="h2 article-title">Projects</h2>
+  </header>
+
+  <section class="projects">
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="card-content">
+          <h3 class="h3 project-name">Project Alpha</h3>
+          <p class="project-category">Open Source</p>
+          <p class="project-desc">An exciting open source project I'm building.</p>
+          <a href="/projects/" class="text-content project-button">Learn more</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="card-content">
+          <h3 class="h3 project-name">Project Beta</h3>
+          <p class="project-category">Tooling</p>
+          <p class="project-desc">A tool I created to solve a real-world problem.</p>
+          <a href="/projects/" class="text-content project-button">Learn more</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="card-content">
+          <h3 class="h3 project-name">Project Gamma</h3>
+          <p class="project-category">Experiment</p>
+          <p class="project-desc">My latest experiment with new technologies.</p>
+          <a href="/projects/" class="text-content project-button">Learn more</a>
+        </div>
+      </div>
+    </div>
+    <p class="resume-note">More on the <a href="/projects/">projects page</a> and <a href="https://github.com/debobrotodasrobin?tab=repositories">my GitHub</a>.</p>
+  </section>
+</article>
+
+<article class="blog" data-page="blog">
+  <header>
+    <h2 class="h2 article-title">Blog</h2>
+  </header>
+
+  <section class="blog-posts">
+    <ul class="blog-posts-list">
+      {% assign recent = site.posts | sort: 'date' | reverse | slice: 0, 4 %}
+      {% for post in recent %}
+      <li class="blog-post-item">
+        <a href="{{ post.url }}">
+          <figure class="blog-banner-box">
+            <div class="blog-banner-placeholder" aria-hidden="true">
+              <img src="/assets/images/icon-dev.svg" alt="" width="36">
+            </div>
+          </figure>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <p class="blog-category">{{ post.date | date: "%b %-d, %Y" }}</p>
+              {% if post.tags.size > 0 %}
+              <span class="dot"></span>
+              <p class="blog-text">{{ post.tags[0] }}</p>
+              {% endif %}
+            </div>
+            <h3 class="h3 blog-item-title">{{ post.title }}</h3>
+            <p class="blog-text">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="resume-note">Read more on the <a href="/blog/">blog archive</a>.</p>
+  </section>
+</article>
+
+<article class="contact" data-page="contact">
+  <header>
+    <h2 class="h2 article-title">Contact</h2>
+  </header>
+
+  <section class="about-text">
+    <p>Have an interesting problem, a question about something I've written, or just want to say hello? My inbox is always open.</p>
+  </section>
+
+  <section class="contact-links">
+    <ul class="contacts-list">
+      <li class="contact-item">
+        <div class="icon-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">Email</p>
+          <a href="mailto:{{ site.email }}" class="contact-link">{{ site.email }}</a>
+        </div>
+      </li>
+      <li class="contact-item">
+        <div class="icon-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.68 1.25 3.33.95.1-.74.4-1.25.72-1.53-2.52-.29-5.18-1.26-5.18-5.62 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.17a10.9 10.9 0 0 1 5.72 0c2.18-1.48 3.14-1.17 3.14-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.67 5.33-5.2 5.61.41.35.77 1.04.77 2.1v3.12c0 .3.2.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+        </div>
+        <div class="contact-info">
+          <p class="contact-title">GitHub</p>
+          <a href="https://github.com/debobrotodasrobin" class="contact-link" rel="me">@debobrotodasrobin</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+</article>

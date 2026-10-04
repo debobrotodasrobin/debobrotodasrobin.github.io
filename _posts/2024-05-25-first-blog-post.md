@@ -6,7 +6,6 @@ categories: [general, tutorial]
 tags: [welcome, introduction]
 ---
 
-# My First Blog Post
 
 Welcome to my blog! This is a sample post to demonstrate tagging and filtering.
 

@@ -4,7 +4,7 @@ title: Curriculum Vitae
 prose: true
 ---
 
-# Curriculum Vitae
+<h2 class="h2 article-title">Curriculum Vitae</h2>
 
 Quick snapshot of my experience, education, and skills.
 
@@ -16,9 +16,8 @@ Quick snapshot of my experience, education, and skills.
 - B.Sc. Computer Science, University of Example, 2022
 
 ## Skills
-<div class="pill-row">
-  <span class="pill">Python</span>
-  <span class="pill">C++</span>
-  <span class="pill">Git</span>
-  <span class="pill">Web Development</span>
-</div>
+
+<span class="tag-pill tag-lg">Python</span>
+<span class="tag-pill tag-lg">C++</span>
+<span class="tag-pill tag-lg">Git</span>
+<span class="tag-pill tag-lg">Web Development</span>

@@ -1,27 +1,26 @@
 ---
 layout: default
 ---
-<article class="article">
-  <header>
-    <h1 class="page-title">{{ page.title }}</h1>
-    <div class="article-meta">
-      <span>{{ page.date | date: "%B %-d, %Y" }}</span>
-      {% if page.categories.size > 0 %}
-        <span aria-hidden="true">&middot;</span>
-        {% for cat in page.categories %}
-          <a class="pill" href="/category/#{{ cat | slugify }}">{{ cat }}</a>
-        {% endfor %}
-      {% endif %}
-      {% if page.tags.size > 0 %}
-        <span aria-hidden="true">&middot;</span>
-        {% for tag in page.tags %}
-          <a class="pill" href="/tag/#{{ tag | slugify }}">{{ tag }}</a>
-        {% endfor %}
-      {% endif %}
-    </div>
-  </header>
-  <div class="article-body">
-    {{ content }}
-  </div>
-  <a class="back-link" href="/blog/">&larr; Back to all posts</a>
-</article>
+<header>
+  <h2 class="h2 article-title">{{ page.title }}</h2>
+</header>
+
+<div class="post-meta">
+  <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+  {% if page.categories.size > 0 %}
+    {% for cat in page.categories %}
+      <a class="tag-pill" href="/category/#{{ cat | slugify }}">{{ cat }}</a>
+    {% endfor %}
+  {% endif %}
+  {% if page.tags.size > 0 %}
+    {% for tag in page.tags %}
+      <a class="tag-pill" href="/tag/#{{ tag | slugify }}">{{ tag }}</a>
+    {% endfor %}
+  {% endif %}
+</div>
+
+<div class="post-body">
+  {{ content }}
+</div>
+
+<a class="back-home-link" href="/blog/">&larr; Back to all posts</a>

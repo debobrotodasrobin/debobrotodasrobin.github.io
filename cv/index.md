@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Curriculum Vitae
+prose: true
 ---
 
 # Curriculum Vitae
@@ -15,9 +16,9 @@ Quick snapshot of my experience, education, and skills.
 - B.Sc. Computer Science, University of Example, 2022
 
 ## Skills
-<div class="tags mt-2">
-  <span class="tag is-info">Python</span>
-  <span class="tag is-link">C++</span>
-  <span class="tag is-success">Git</span>
-  <span class="tag is-warning">Web Development</span>
+<div class="pill-row">
+  <span class="pill">Python</span>
+  <span class="pill">C++</span>
+  <span class="pill">Git</span>
+  <span class="pill">Web Development</span>
 </div>

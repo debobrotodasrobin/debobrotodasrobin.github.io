@@ -3,13 +3,14 @@ layout: default
 title: Tags
 ---
 
-<section class="section">
-  <h1 class="title">Tags</h1>
-  <p class="subtitle">Click a tag to view all posts in that category.</p>
-  <div class="tags are-medium">
-  {% assign all_tags = site.tags | sort %}
-  {% for tag in all_tags %}
-    <a class="tag is-link" href="/tag/#{{ tag[0] | slugify }}">{{ tag[0] }} ({{ tag[1].size }})</a>
-  {% endfor %}
-  </div>
-</section>
+<header style="margin-bottom:2rem;">
+  <h1 class="page-title">Tags</h1>
+  <p class="page-lede">Click a tag to view all posts that carry it.</p>
+</header>
+
+<div class="pill-row">
+{% assign all_tags = site.tags | sort %}
+{% for tag in all_tags %}
+  <a class="pill pill-accent" href="/tag/#{{ tag[0] | slugify }}">{{ tag[0] }} &middot; {{ tag[1].size }}</a>
+{% endfor %}
+</div>

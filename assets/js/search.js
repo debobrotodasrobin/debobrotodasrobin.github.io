@@ -9,8 +9,8 @@
     searchInput: input,
     resultsContainer: document.getElementById('results-container'),
     json: '/search.json',
-    searchResultTemplate: '<div class="box mb-3"><a href="{url}" class="is-size-5 has-text-link">{title}</a><br><span class="has-text-grey">{date}</span><p>{excerpt}</p></div>',
-    noResultsText: '<p>No results found</p>',
+    searchResultTemplate: '<div class="search-result"><a href="{url}">{title}</a><span class="sr-date">{date}</span><p>{excerpt}</p></div>',
+    noResultsText: '<p style="color:var(--text-3);">No results found.</p>',
     limit: 15,
     fuzzy: false,
   });

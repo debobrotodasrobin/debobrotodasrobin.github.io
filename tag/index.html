@@ -3,31 +3,28 @@ layout: default
 title: Posts by Tag
 ---
 
-<section class="section">
-  <h1 class="title">Posts by Tag</h1>
-  <p class="subtitle">Click a tag below to jump to that section.</p>
+<header style="margin-bottom:2rem;">
+  <h1 class="page-title">Posts by Tag</h1>
+  <p class="page-lede">Jump to a tag below to see its posts.</p>
+</header>
 
-  <div class="tags are-medium">
-  {% assign all_tags = site.tags | sort %}
-  {% for tag in all_tags %}
-    <a class="tag is-info" href="#{{ tag[0] | slugify }}">{{ tag[0] }} ({{ tag[1].size }})</a>
+<div class="pill-row" style="margin-bottom:2rem;">
+{% assign all_tags = site.tags | sort %}
+{% for tag in all_tags %}
+  <a class="pill pill-accent" href="#{{ tag[0] | slugify }}">{{ tag[0] }} &middot; {{ tag[1].size }}</a>
+{% endfor %}
+</div>
+
+{% assign all_tags = site.tags | sort %}
+{% for tag in all_tags %}
+  <h2 class="year-head" id="{{ tag[0] | slugify }}" style="margin-top:2.25rem;">{{ tag[0] }}</h2>
+  <ul class="post-list">
+  {% for post in tag[1] %}
+    <li>
+      <span class="post-date">{{ post.date | date: '%b %-d' }}</span>
+      <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
+      <span style="margin-left:auto;"><a class="section-link" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">&uarr; Top</a></span>
+    </li>
   {% endfor %}
-  </div>
-
-  <hr>
-
-  {% assign all_tags = site.tags | sort %}
-  {% for tag in all_tags %}
-    <h2 class="title is-4" id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
-    <ul>
-    {% for post in tag[1] %}
-      <li>
-        <a href="{{ post.url }}"><strong>{{ post.title }}</strong></a>
-        <span class="has-text-grey">({{ post.date | date: "%b %d, %Y" }})</span>
-      </li>
-    {% endfor %}
-    </ul>
-    <a class="button is-small is-light" href="#">Back to top</a>
-    <hr>
-  {% endfor %}
-</section>
+  </ul>
+{% endfor %}
